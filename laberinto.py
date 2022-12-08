@@ -1,4 +1,3 @@
-from datos import laberinto
 from datos import muro
 #Laberinto
 def laberinto(xy, muro): #Función que crea el laberinto(dimensión, muro)
@@ -18,9 +17,8 @@ def laberinto(xy, muro): #Función que crea el laberinto(dimensión, muro)
         laberinto.append(filas)
     return laberinto
 
-
+laberinto_deseado = laberinto(5, muro)
 #Función que muestra el laberinto
-def laberinto_impreso():
-    laberinto_deseado = laberinto(5, muro)
+def laberinto_impreso(laberinto_deseado):
     for x in laberinto_deseado:
         print(''.join(x))
