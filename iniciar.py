@@ -1,3 +1,3 @@
-from recorrer_laberinto import *
+from laberinto import *
 if __name__ == '__main__':
-    recorrer_laberinto(laberinto)
+    laberinto_impreso(laberinto_deseado)
