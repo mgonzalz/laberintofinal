@@ -3,6 +3,7 @@ from datos import muro
 #Laberinto
 def laberinto(xy, muro): #Función que crea el laberinto(dimensión, muro)
     S = (4,4) #Coordenadas de la S
+    laberinto = [] #Lista vacía del laberinto
     for x in range(5):
         filas=[]
         for y in range(xy): #Recorre las filas
@@ -14,10 +15,12 @@ def laberinto(xy, muro): #Función que crea el laberinto(dimensión, muro)
                 filas.append('E')
             else:
                 filas.append(' ')
-        print(filas)
+        laberinto.append(filas)
+    return laberinto
 
 
 #Función que muestra el laberinto
 def laberinto_impreso():
     laberinto_deseado = laberinto(5, muro)
-    print(laberinto_deseado)
+    for x in laberinto_deseado:
+        print(''.join(x))
