@@ -7,12 +7,12 @@ from datos import *
     ['X', 'X', 'X', 'X', 'S']
 '''
 def recorrer_laberinto(laberinto):
-    m = 0
-    n = 0
-    tam = len(laberinto)
-    solucion = []
+    m = 0 #Fila
+    n = 0 #Columna
+    tam = len(laberinto) #Tamaño del laberinto
+    solucion = [] #Lista vacía de la solución
     while (m < tam-1 and n < tam-1): #Que no llegue al final
-        if laberinto[m][n] == 'E':
+        if laberinto[m][n] == 'E': #Inicio del laberinto
             solucion.append('Abajo')
             m += 1 #Avanzar hacia abajo
         elif laberinto[m][n] == ' ': #Si es un espacio
@@ -28,10 +28,10 @@ def recorrer_laberinto(laberinto):
             else: #Una fila arriba, misma columna
                 solucion.append('Arriba')
                 m -= 1 #Avanzar hacia arriba
-        elif laberinto[m][n] == 'S':
+        elif laberinto[m][n] == 'S': #Final del laberinto
             solucion.append('Abajo')
         else:
-            solucion.append('No hay solución')
+            break
     return solucion
-# Mostrar por pantalla la lista de movimientos
+#Solución
 print('Solución: ', recorrer_laberinto(laberinto))
